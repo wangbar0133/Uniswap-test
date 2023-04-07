@@ -110,6 +110,14 @@ describe('UniswapV2', function () {
 
   it('Execution', async function () {
       /** CODE YOUR SOLUTION HERE */
+      await usdt.connect(player).approve(router.address, 9999999999999);
+      await router.connect(player).swapExactTokensForTokens(
+        90000,
+        0,
+        [usdt.address, usdc.address],
+        player.address,
+        1768095287
+      );
   });
 
   after(async function () {
